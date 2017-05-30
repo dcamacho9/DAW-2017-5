@@ -1,0 +1,92 @@
+<div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Ofertas y cupones
+                    <small>Copia el código y utiliza nuestras ofertas y cupones</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Project One -->
+        <div class="row">
+       <div role ="tabpanel"class="tab-pane"id="ofertas">
+
+       <ul>
+           <li *ngFor ="let oferta  of ofertas">
+               <div class="col-md-7">
+                   <img src ="../assets/img/2x1.jpg">
+                   <br/>
+               </div>
+               <div class="col-md-5">
+                   <h3>{{oferta.name}}</h3>
+                   <h4>CODIGO:{{oferta.code}}</h4>
+                   <p>{{oferta.description}}</p>
+               </div>
+              
+            
+            </li>
+            
+       </ul>
+      
+       
+       </div>
+        </div>
+        <div class="row">
+            
+                 <h2> AÑADIR OFERTAS</h2>
+             <div>
+                 <label> Name </label>
+                 <input [(ngModel)] ="oferta.name" placeholder ="name"/>
+             </div>
+            
+             <div>
+                  <label>Codigo</label>
+                  <input [(ngModel)]="oferta.code" placeholder="code">
+             </div>
+        <p>
+            <button (click)="save()">Guardar</button>
+
+
+        </p>
+        </div>
+
+       <br/>
+       <br/>
+       <br/>
+       
+       
+        <!-- /.row -->
+        <div class="row">
+        <div role="tabpanel"class="tab-pane"id="ofertasDescuento">
+            <br/>
+           <ul>
+           <li *ngFor ="let ofertaDescuento  of ofertasDescuento">
+               <div class="col-md-7">
+                   <img src ="../assets/img/10.png">
+                   <br/>
+               </div>
+               <div class="col-md-5">
+                   <h3>{{ofertaDescuento.name}}</h3>
+                   <h4>CODIGO:{{ofertaDescuento.code}}</h4>
+                   <p>{{ofertaDescuento.description}}</p>
+               </div>
+              
+            
+            </li>
+            <br/>
+            
+       </ul>
+        
+        </div>
+        </div>
+        
+        
+        </div>
+		 
+        <!-- /.row -->
+      
+       <br/>
+    

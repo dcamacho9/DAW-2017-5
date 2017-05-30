@@ -1,0 +1,186 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<html lang="en">
+
+<head>
+    <title>VirtualVinilo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
+    <script src="js/miPerfil.js"></script>
+    <script src="jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+
+    <!header>
+    <div class="navbar navbar-default navbar-fixed-top">
+
+        <div class="navbar-header">
+            <a id="logo-container" href="/" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="container">
+            <div class="navbar-collapse collapse" id="navbar-main">
+               
+              <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form">
+                            <button type="button" class="btn btn-default">
+                                <a class="glyphicon glyphicon-shopping-cart" href="/carrito"></a>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="/ofertas">OFERTAS</a>
+                    </li>
+                    
+                    {{#unlogged}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="/login">Iniciar Sesión</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/registro">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    {{/unlogged}}
+                    
+                    {{#logged}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">{{#user}} {{ name }} {{/user}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="/miperfil">Mi Perfil</a></li>
+                            <li class="divider"></li>
+                            {{#admin}}
+                            <li><a href="/administrador">Administrador</a></li>
+                            <li class="divider"></li>
+                            {{/admin}}
+                            <li><a href="/logout">Cerrar sesion</a></li>
+                        </ul>
+                    </li>
+                    {{/logged}}
+                    
+                </ul>            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 text-justify">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-header">
+                            <h1 id="forms"> Mi Perfil 
+                              <small>  Visualice sus datos</small>
+                          </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- final cabecera -->
+        </div>
+
+        <!-- USER PROFILE ROW STARTS-->
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+                <div class="user-wrapper">
+                    <div class="description">
+                        <br>
+                        <h3> {{user.name}}</h3>
+                        <hr />
+                        <div class="list-group">
+                            <a id="miPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Mi Perfil </a>
+                            <a id="editarPerfilMenu" href="#" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Administrar perfil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-lg-9 col-md-9" id="miPerfil">
+                <p class="lead">Información de usuario</p>
+                <div class="list-group">
+                    <p class="list-group-item">{{user.name}}</p>
+                    <p class="list-group-item">{{user.surname}}</p>
+                    <p class="list-group-item">{{user.email}}</p>
+                    <p class="list-group-item">{{user.telephone}}</p>
+                    <p class="list-group-item">{{user.pais}}</p>
+                    <p class="list-group-item">{{user.postalCode}}</p>
+                </div>
+                <hr />
+                
+                <p class="lead">Información de contacto</p>
+                <div class="list-group">
+                    <p class="list-group-item">{{user.email}}</p>
+                    <p class="list-group-item">{{user.telephone}}</p>
+                </div>
+                <hr />
+                <p class="lead">Dirección de envío</p>
+                <div class="list-group">
+                    <p class="list-group-item">{{user.descripcion}}</p>
+                    
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9" id="editarPerfil">
+                <!-- Editar opciones del perfil -->
+                <h3> Administrar perfil </h3>
+                <br>
+                <!-- <div class="description"> -->
+              
+                <br>
+          
+                
+                
+                <!-- Eliminar cuenta  -->
+                <div class="panel panel-danger text-center">
+                    <div class="panel-heading">
+                        Borrar cuenta
+                    </div>
+                    <form action="borrarPerfil">
+                    <div class="panel-body text-center">
+                        <p> Su cuenta será borrada para siempre y no podrá recuperarla. Al pulsar el botón de eliminar su cuenta será totalmente eliminada</p>
+                        <a href="/deleteUser">
+	                         <button type="button"  class="btn btn-danger">Eliminar</button>
+                           </a>
+                        
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- USER PROFILE ROW END-->
+    </div>
+
+    <br>
+    <br>
+
+    <div class="container">
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p align="center">Copyright &copy; AdoptaUnCompañero</p>
+                    <p align="center">Guillermo Urbano, Ilia Ramírez, Dina El Gueddari, Yasmina Leranca</p>
+                    <p align="center" class="text-danger"><a href="/somos">Quienes Somos</a></p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+</body>
+
+</html>

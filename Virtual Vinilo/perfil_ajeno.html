@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>VirtualVinilo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
+</head>
+
+<body>
+
+    <!header>
+    <div class="navbar navbar-default navbar-fixed-top">
+
+        <div class="navbar-header">
+            <a id="logo-container" href="index.html" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="container">
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="search" class="btn btn-default">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form">
+                            <button type="button" class="btn btn-default">
+                                <a class="glyphicon glyphicon-shopping-cart" href="carrito.html"></a>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="ofertas.html">OFERTAS</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="inicio_sesion.html">Iniciar Sesión</a></li>
+                            <li class="divider"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                            <li class="divider"></li>
+                            <li><a href="miperfil.html">Mi Perfil</a></li>
+                            <li class="divider"></li>
+                            
+                            <li><a href="administrador.html">Administrador</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+        <!-- Primera fila (Datos personales y avatar con información)  -->
+        <div class="row">
+            <!-- Menú del pefil  -->
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="miperfil.html" class="list-group-item"><span class="glyphicon glyphicon-user"></span> Cuenta </a>
+                    <a href="contenido.html" class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> Contenido </a>
+                    <a href="amigos.html" class="list-group-item"><span class="glyphicon glyphicon-globe"></span> Amigos </a>
+                </div>
+            </div>
+            <!-- Datos personales  -->
+            <div class="col-md-7">
+                <div class="panel panel-default">
+                    <div class="panel-heading cabecera">
+                        Datos personales
+                    </div>
+                    <div class="panel-body">
+                        <p class="datos"> Nombre : Daniel </p>
+                        <p class="datos"> Apellidos : Camacho Jimenez </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Avatar y datos principales  -->
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="imagenes/250x250.png">
+                        <p class="avatar"> Usuario : d.camacho </p>
+                        <p class="avatar"> Correo: danicamacho9@gmail.com </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Segunda fila (Estadisticas y detalles) -->
+        <div class="row">
+            <!-- Estadísticas -->
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p class="datos"> Número de amigos : 2 </p>
+                        <p class="datos"> Número de vinilos comprados : 1 </p>
+                        <p class="datos"> Número de ofertas adquiridas : 2 </p>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Detalles -->
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p class="info2"> Aportes : Ninguno </p>
+                        <p class="info2"> Ultima visita : hace una hora </p>
+                        <p class="info2"> Usuario desde : hace menos de 1 año </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Favoritos-->
+        <div class="centrado">
+            <div class="panel panel-danger">
+                <div class="panel-heading cabecera">
+                    Favoritos
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-body fotos">
+                                    <p> Vinilos Comprados </p>
+                                    <img src="imagenes/img3.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-body fotos">
+                                    <p> ofertas Adquiridas </p>
+                                    <img src="imagenes/img2.jpg" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p align="center">Copyright &copy; VirtualVinilo</p>
+                    <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
+                    <p align="center" class="text-danger"><a href="somos.html">Quienes Somos</a></p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+</body>
+
+</html>

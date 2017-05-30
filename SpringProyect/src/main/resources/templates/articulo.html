@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>VirtualVinilo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
+    <script src="js/cookie.js"></script>
+    <script src="js/addProducts.js"></script>
+</head>
+
+<body>
+
+    <!header>
+    <div class="navbar navbar-default navbar-fixed-top">
+
+        <div class="navbar-header">
+            <a id="logo-container" href="/" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="container">
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form">
+                            <button type="button" class="btn btn-default">
+                                <a class="glyphicon glyphicon-shopping-cart" href="/carrito"></a>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="/ofertas">OFERTAS</a>
+                    </li>
+                    
+                    {{#unlogged}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="/login">Iniciar Sesión</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/registro">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    {{/unlogged}}
+                    
+                    {{#logged}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">{{#user}} {{ name }} {{/user}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="/miperfil">Mi Perfil</a></li>
+                            <li class="divider"></li>
+                            {{#admin}}
+                            <li><a href="/administrador">Administrador</a></li>
+                            <li class="divider"></li>
+                            {{/admin}}
+                            <li><a href="/logout">Cerrar sesion</a></li>
+                        </ul>
+                    </li>
+                    {{/logged}}
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+    <br>
+    <br>
+    <br>
+
+	<div class="container content">
+	 {{#messages}}
+	
+		<div class="alert alert-success alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			{{messages}}
+		</div>
+	
+	{{/messages}} 
+	{{#error}}
+	
+		<div class="alert alert-danger alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			{{error}}
+		</div>
+	
+	{{/error}}
+    <div class="container">
+       
+
+        <!-- USER PROFILE ROW STARTS-->
+        <div class="row">
+            <br>
+            <div class="col-md-3">
+
+                <div class="user-wrapper">
+                    <br>
+                    <img src="/imagenes/{{vinilo.img}}" class="img-responsive" />
+                    <br>
+                    <div class="description well">
+                        <h3>{{vinilo.precio}} €</h3>
+                        <div class="ratings">
+                            <h4>En stock</h4>
+                            <hr />
+                            <br>
+
+                            <div class="text-center" >
+                                <a href="/{{id}}/addCarrito" style="width: 100%" class="btn btn-info btn-md" "><span class="glyphicon glyphicon-shopping-cart"></span> Añadir al carrito</a>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+
+            <div class="col-md-9 user-wrapper">
+                <div class="alert alert-info">
+                	<h3>{{vinilo.interprete}}  </h3>
+                    <h3>{{vinilo.title}}  </h3>
+                    <p>
+                       {{vinilo.subtitle}}
+                    </p>
+                </div>
+                <hr />
+
+
+                <br>
+                <!-- <div class="description"> -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Datos del Vinilo</div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="col-sm-4">
+
+                            <h3>Intérprete</h3>
+                            <p>{{vinilo.interprete}}</p>
+
+                        </div>
+                        <div class="col-sm-4">
+
+                            <h3>Fecha</h3>
+                            <p>{{vinilo.fecha}}</p>
+
+                        </div>
+
+                        <div class="col-sm-4">
+
+                            <h3>Estado</h3>
+                            <p>{{vinilo.estado}}</p>
+
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="col-sm-4">
+
+                            <h3 class="text-left">Album</h3>
+                            <p>{{vinilo.album}}</p>
+
+                        </div>
+                        <div class="col-sm-4">
+
+                            <h3>Precio</h3>
+                            <p>{{vinilo.precio}}</p>
+
+                        </div>
+                        <div class="col-sm-4">
+
+                            <h3>Código</h3>
+                            <p>{{vinilo.codigo}}</p>
+
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="text-muted bootstrap-admin-box-title">Añade un comentario y valoración del producto</div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-lg-9">
+                    <form class="form-horizontal" action="{{id}}/addComment" method="post">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="col-lg-2  col-md-2 col-sm-7 col-xs-12 control-label text-center">
+                                    <input class="btn btn-primary" type='submit' value='Guardar' />
+                                </label>
+                            <div class="col-lg-10 col-md-10 col-xs-12">
+                            	<input type="textarea" name="asunto" style="width:700px; height:25px" class="form-control col-lg-10 col-md-10 col-xs-12" placeholder="Asunto.">           
+                                <br>
+                                <input id="textarea-wysihtml5" type="textarea" name="message" style="width:700px; height:50px" class="form-control col-lg-10 col-md-10 col-xs-12" placeholder="Introduce un comentario.">
+                            </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <!-- RATINGS ROW -->
+
+        <div class="well">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="pull-left"><h3>Comentarios</h3></span>
+                </div>
+            </div>
+            <hr>
+			{{#comentarios}}
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>{{asunto}}</h4>
+                    <p>{{message}}</p>                   
+                </div>
+            </div>
+
+            <hr>
+			{{/comentarios}}
+            
+
+        </div>
+
+        <!-- RATINGS ROW END -->
+            </div>
+        </div>
+        <!-- USER PROFILE ROW END-->
+
+        
+
+    </div>
+
+    <br>
+	</div>
+    <div class="container">
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p align="center">Copyright &copy; VirtualVinilo</p>
+                    <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
+                    <p align="center" class="text-danger"><a href="/somos">Quienes Somos</a></p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+
+</body>
+
+</html>

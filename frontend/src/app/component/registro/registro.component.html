@@ -1,0 +1,109 @@
+<div class="container">
+        <br>
+        <br>
+        <div class="page" id="banner">
+            <div class="row">
+                <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 text-justify">
+                    <!-- Título -->
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="page-header">
+                                <h1 id="forms">Regístrate ahora! <small> Compra y vende vinilos en nuestro portal</small></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Columna -->
+                <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-6 col-md-offset-3 col-sm-offset-3 col-lg-offset-3 text-justify">
+                    <!-- Formulario -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="well bs-component">
+                                
+                                 <form action="registrarse" method="post">
+                                   
+                                        <legend>Datos personales</legend>
+                                        <div class="form-group">
+                                            <label for="inputUser" class="col-lg-12 control-label">Nombre de usuario</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="name" placeholder="Elige un nombre de usuario">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputUser" class="col-lg-12 control-label">Nombre y apellidos</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="surname" placeholder="Introduce tu nombre y apellidos">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">Email</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="email" placeholder="Introduce email">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">País</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="pais" placeholder="Introduce el país">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">Codigo Postal</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="postalCode" placeholder="Introduce el código postal">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">Dirección, población</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="descripcion" placeholder="Introduce una descripción que te defina">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <br>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">Número de teléfono</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" class="form-control" name="telephone" placeholder="Introduce tu número de telefono">
+                                            </div>
+                                        </div>
+                                         <div class="col-lg-12">
+                                            <br>
+                                            </div>
+                                        
+                                         <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-12 control-label">Contraseña</label>
+                                            <div class="col-lg-12">
+                                                <input type="password" class="form-control" name="contraseña" placeholder="Elige una contraseña">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                        <br>
+                                        </div>
+           
+                                    <div class="form-group">
+                                     
+                                   <button (click)="register(name.value,surname.value,email.value,pais.value,descripcion.value,telephone.value,passwordHash.value,postalCode.value)" type="submit" class="btn btn-primary btn-lg btn-block submitButton">Registrarme</button>
+                                    </div>
+                                  
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>

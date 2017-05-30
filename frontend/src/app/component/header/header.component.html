@@ -1,0 +1,57 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+            <a id="logo-container" routerLink="/" routerLinkActive="active" class="brand-logo" style="width: 180px; height: 64px"><img src="src/assets/img/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+    </div>
+    <div class="container">
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form">
+                            <button type="button" class="btn btn-default">
+                                <a class="glyphicon glyphicon-shopping-cart" routerLink="/carrito" routerLinkActive="active"></a>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a routerLink="/ofertas" routerLinkActive="active">OFERTAS</a>
+                    </li>
+                    <li>
+                        <a routerLink="/admin" routerLinkActive="active">ADMIN</a>
+                    </li>
+                    
+                    <!--{{#unlogged}}-->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">{{user}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                    <li> <a routerLink="/login" routerLinkActive="active"> IniciarSesion </a></li>
+
+                            <li class="divider"></li>
+                            <li><a routerLink="/registro" routerLinkActive ="active">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    <!--{{/unlogged}}
+                    
+                    {{#logged}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">{{#user}} {{ name }} {{/user}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="/miperfil">Mi Perfil</a></li>
+                            <li class="divider"></li>
+                            {{#admin}}
+                            <li><a href="/administrador">Administrador</a></li>
+                            <li class="divider"></li>
+                            {{/admin}}
+                            <li><a href="/logout">Cerrar sesion</a></li>
+                        </ul>
+                    </li>
+                    {{/logged}}-->
+                    
+                </ul>
+            </div>
+        </div>
+</div>

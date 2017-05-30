@@ -1,0 +1,100 @@
+<br>
+<!carousel>
+
+    <div class="page" id="banner">
+        <div class="row">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="src/assets/img/Caroussel1.png" alt="...">
+                        <div class="carousel-caption">
+                            <h3>Bienvenido a Virtual Vinilo </h3>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="src/assets/img/Caroussel2.png" alt="...">
+                        <div class="carousel-caption">
+                            <h3>Tu web de vinilos</h3>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="src/assets/img/Caroussel3.png" alt="...">
+                        <div class="carousel-caption">
+                            <h3>Tu web por naturaleza</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+            <!-- Carousel -->
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+
+                <p class="lead">Filtrar Productos</p>
+                <div class="list-group">
+                    <p class="list-group-item">Por interprete</p>
+                    <li *ngFor = "let elem of resources">
+                    <a href="#" class="list-group-item">{{elem.interprete}} <span class="badge">10</span></a>
+                    </li>
+                </div>
+                <div class="list-group">
+                    <p class="list-group-item">Por estado</p>
+                    <a href="#" class="list-group-item">estado1 <span class="badge">10</span></a>
+                    <a href="#" class="list-group-item">estado2 <span class="badge">10</span></a>
+                </div>
+                <div class="list-group">
+                    <p class="list-group-item">Por precio</p>
+                    <a href="#" class="list-group-item">rango1 <span class="badge">10</span></a>
+                    <a href="#" class="list-group-item">rango2 <span class="badge">10</span></a>
+                    <a href="#" class="list-group-item">rango3 <span class="badge">10</span></a>
+                </div>
+            </div>
+            
+            <div class="col-md-9">
+                <div *ngFor ="let resource of resources" >
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                         <div class="thumbnail">
+                            <a href="{{resource.id}}" ><img src="../assets/img/avatar.png" style="width: 320px; height: 280px" alt=""></a>
+                            <div class="caption">
+                                <h4 class="pull-right">{{resource.precio}} €</h4>
+                                <h4> <a [routerLink]="['/resource',resource.id]"> {{resource.id}}</a></h4>
+                                
+                               <!-- <h4><a href="{{id}}">{{interprete}}</a>
+                                </h4>-->
+                                <h5>{{resource.title}}</h5>
+                                <p>{{resource.subtitle}}</p>
+                            </div>
+                             
+                        </div>
+                     
+                    </div>
+                </div>
+                
+
+        </div>
+        
+    </div>

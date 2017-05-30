@@ -1,0 +1,135 @@
+//Pantalla que muestre la lista de ofertas o cupones que se encunetran en la base de datos
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Virtual Vinilo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <<<<<<< Updated upstream <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
+    <link type="text/css" rel="stylesheet" href="estilos.css" /> >>>>>>> Stashed changes
+</head>
+
+<body>
+
+    <!header>
+    <div class="navbar navbar-default navbar-fixed-top">
+
+        <div class="navbar-header">
+            <a id="logo-container" href="/" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="container">
+            <div class="navbar-collapse collapse" id="navbar-main">
+               
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form">
+                            <button type="button" class="btn btn-default">
+                                <a class="glyphicon glyphicon-shopping-cart" href="/carrito"></a>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="/ofertas">OFERTAS</a>
+                    </li>
+                    {{#unlogged}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="/login">Iniciar Sesión</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/registro">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    {{/unlogged}}
+                    
+                    {{#logged}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">{{#user}} {{ name }} {{/user}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="/miperfil">Mi Perfil</a></li>
+                            <li class="divider"></li>
+                            {{#admin}}
+                            <li><a href="/administrador">Administrador</a></li>
+                            <li class="divider"></li>
+                            {{/admin}}
+                            <li><a href="/logout">Cerrar sesion</a></li>
+                        </ul>
+                    </li>
+                    {{/logged}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Ofertas y cupones
+                    <small>Copia el código y utiliza nuestras ofertas y cupones</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Project One -->
+       <div role ="tabpanel"class="tab-pane"id="ofertas">
+       <div class="listItems2">
+       {{#ofertas}} {{>listItems2}} {{/ofertas}}       
+       </div>
+       <button id="moreArticulos"type="button" class="btn btn-primary btn-lg btn-block btn-view-more">Ver mas</button>
+       
+       
+       </div>
+       </br>
+       
+       
+        <!-- /.row -->
+        <div role="tabpanel"class="tab-pane"id="ofertasDescuento">
+        <div class="listItems3">
+         {{#ofertasDescuento}} {{> listItems3}}  {{/ofertasDescuento}}
+        </div>
+        <button id ="moreOfertasDescuento"type="button" class="btn btn-primary btn-lg btn-block btn-view-more">Ver mas</button>
+        
+        
+        </div>
+		 
+        <!-- /.row -->
+       </div>
+      
+
+        <div class="container">
+            <hr>
+
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p align="center">Copyright &copy; VirtualVinilo</p>
+                        <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
+                        <p align="center" class="text-danger"><a href="/somos">Quienes Somos</a></p>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </footer>
+        </div>
+</body>
+
+</html>

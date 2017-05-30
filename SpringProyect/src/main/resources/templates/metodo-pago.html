@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>VirtualVinilo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/pago.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
+    <link type="text/css" rel="stylesheet" href="css/customcss.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <!header>
+    <div class="navbar navbar-default navbar-fixed-top">
+
+        <div class="navbar-header">
+            <a id="logo-container" href="/" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="container">
+            <div class="navbar-collapse collapse" id="navbar-main">
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form">
+                            <button type="button" class="btn btn-default">
+                                <a class="glyphicon glyphicon-shopping-cart" href="/carrito"></a>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="/ofertas">OFERTAS</a>
+                    </li>
+                    {{#unlogged}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="/login">Iniciar Sesión</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/registro">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    {{/unlogged}}
+                    
+                    {{#logged}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">{{#user}} {{ name }} {{/user}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="/miperfil">Mi Perfil</a></li>
+                            <li class="divider"></li>
+                            {{#admin}}
+                            <li><a href="/administrador">Administrador</a></li>
+                            <li class="divider"></li>
+                            {{/admin}}
+                            <li><a href="/logout">Cerrar sesion</a></li>
+                        </ul>
+                    </li>
+                    {{/logged}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 text-justify">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-header">
+                            <h1 id="forms"> Método de pago</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- final cabecera -->
+        </div>
+        <select class="form-control" id="payment-method">
+            <option value="null">Seleccione metodo de pago</option>
+            <option value="card">Pagar con Tarjeta</option>
+            <option value="pay">Pagar con Paypal</option>
+        </select>
+        <div style="display:none" id="card-selected" class="panel panel-default text-center">
+            <div class="panel-heading">
+                <div class="text-muted bootstrap-admin-box-title">Añade una nueva Tarjeta de Crédito</div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <form class="form-horizontal">
+                        <div class="col-lg-11">
+
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"> Nombre asociado a la Tarjeta</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control col-md-6">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="typeahead">Apellidos asociados a la Tarjeta</label>
+                                <div class="col-lg-9">
+                                    <input type="password" class="form-control col-md-6">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="typeahead">Numero de Tarjeta</label>
+                                <div class="col-lg-9">
+                                    <input type="number" class="form-control col-md-6">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="typeahead">Fecha de caducidad de la tarjeta</label>
+                                <div class="col-lg-9">
+                                    <input type="date" class="form-control col-md-6">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="typeahead">CVV</label>
+                                <div class="col-lg-9">
+                                    <input type="number" class="form-control col-md-6">
+
+                                </div>
+                            </div>
+                            <br>
+
+                            <label class="col-lg-12">
+                                <a href="/" class="btn btn-primary" onclick="feebackCompra()">Realizar Compra</a>
+                            </label>
+                            <script>
+                                function feebackCompra() {
+                                    alert("¡Compra realizada!");
+                                }
+
+                            </script>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <div style="display:none" id="pay-selected" class="panel panel-default text-center">
+            <div class="panel-heading">
+                <div class="text-muted bootstrap-admin-box-title">Añade una nuevo Paypal</div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <form class="form-horizontal">
+                        <div class="col-lg-11">
+
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"> Nombre asociado a Paypal</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control col-md-6">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="typeahead">Apellidos asociados a Paypal</label>
+                                <div class="col-lg-9">
+                                    <input type="password" class="form-control col-md-6">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label" for="typeahead">Contraseña de Paypal</label>
+                                <div class="col-lg-9">
+                                    <input type="password" class="form-control col-md-6">
+
+                                </div>
+                            </div>
+                            <br>
+
+                            <label class="col-lg-12">
+                                <a href="/" class="btn btn-primary" onclick="feebackCompra()">Realizar Compra</a>
+                            </label>
+
+                            <script>
+                                function feebackCompra() {
+                                    alert("¡Compra realizada!");
+                                }
+
+                            </script>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+        </div>
+
+    <div class="container">
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p align="center">Copyright &copy; VirtualVinilo</p>
+                    <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
+                    <p align="center" class="text-danger"><a href="/somos">Quienes Somos</a></p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+</body>
+
+</html>

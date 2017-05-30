@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Vinilo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstraptheme.css" />
+</head>
+
+<body>
+
+    <!header>
+    <div class="navbar navbar-default navbar-fixed-top">
+
+        <div class="navbar-header">
+            <a id="logo-container" href="index.html" class="brand-logo" style="width: 180px; height: 64px"><img src="imagenes/VirtualViniloLogo.png" style="width: 180px; height: 58px; padding: 5px"></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="container">
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="search" class="btn btn-default">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form">
+                            <button type="button" class="btn btn-default">
+                                <a class="glyphicon glyphicon-shopping-cart" href="carrito.html"></a>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a href="ofertas.html">OFERTAS</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">USUARIO <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="download">
+                            <li><a href="inicio_sesion.html">Iniciar Sesión</a></li>
+                            <li class="divider"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                            <li class="divider"></li>
+                            <li><a href="miperfil.html">Mi Perfil</a></li>
+                            <li class="divider"></li>
+                           
+                            <li><a href="administrador.html">Administrador</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+
+            <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 text-justify">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-header">
+                            <h1 id="forms"> Nombre del Vinilo 
+                              <small>
+                                  <br>
+                                  Vinilo Edición Especial de The Beatles de 1969</small>
+                          </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- final cabecera -->
+        </div>
+
+        <!-- USER PROFILE ROW STARTS-->
+        <div class="row">
+            <br>
+            <div class="col-md-3 col-sm-3">
+
+                <div class="user-wrapper">
+                    <br>
+                    <img src="https://http2.mlstatic.com/disco-vinilo-the-beatles-D_NQ_NP_13626-MLA3209892061_092012-F.jpg" class="img-responsive" />
+                    <br>
+                    <div class="description well">
+                        <h3> Nombre del album</h3>
+                        <div class="ratings">
+                            <p class="pull-right">3 reviews</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </p>
+                            <h4>En stock</h4>
+                            <hr />
+                            <br>
+
+                            <div class="text-center">
+                                <a href="carrito.html" class="btn btn-info btn-md" onclick="feebackCarrito()"><span class="glyphicon glyphicon-shopping-cart"></span> Añadir al carrito</a>
+                            </div>
+                            <script>
+                                function feebackCarrito() {
+                                    alert("¡Producto añadido!");
+                                }
+
+                            </script>
+                            <br>
+                            <div class="text-center">
+                                <input class="form-control form-control-sm" type="text" placeholder="XXXXX" id="ex1">
+                                <label for="ex1">Validar Cupón</label>
+                            </div>
+                            <hr />
+                            <div class="text-center">
+                                <a href="miperfil.html" class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-star"></span> Añadir a lista de deseos</a>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+
+            <div class="col-md-9 col-sm-9  user-wrapper">
+                <div class="alert alert-info">
+                    <h3> Acerca del vendedor </h3>
+                    <p>
+                        Descripcion del anunciante, datos del anunciante, contacto etc Descripcion del anunciante, datos del anunciante, contacto etc Descripcion del anunciante, datos del anunciante, contacto etc Descripcion del anunciante, datos del anunciante, contacto etc
+                    </p>
+                </div>
+                <hr />
+
+
+                <br>
+                <!-- <div class="description"> -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Datos del Vinilo</div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="col-sm-4">
+
+                            <h3>Intérprete</h3>
+                            <p>intérprete del vinilo</p>
+
+                        </div>
+                        <div class="col-sm-4">
+
+                            <h3>Fecha</h3>
+                            <p>fecha del vinilo</p>
+
+                        </div>
+
+                        <div class="col-sm-4">
+
+                            <h3>Estado</h3>
+                            <p>estado del vinilo</p>
+
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="col-sm-4">
+
+                            <h3 class="text-left">Album</h3>
+                            <p>album del vinilo</p>
+
+                        </div>
+                        <div class="col-sm-4">
+
+                            <h3>Precio</h3>
+                            <p>precio del vinilo</p>
+
+                        </div>
+                        <div class="col-sm-4">
+
+                            <h3>Código</h3>
+                            <p>código del vinilo</p>
+
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="text-muted bootstrap-admin-box-title">Tracklist del Vinilo</div>
+                    </div>
+
+
+                    <div class="clearfix">
+                        <div class="col-md-6">
+                            <br>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <br>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                            <p>cancion del vinilo</p>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+
+                <!-- </div>   <!-- fin div description -->
+            </div>
+        </div>
+        <!-- USER PROFILE ROW END-->
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="text-muted bootstrap-admin-box-title">Añade un comentario y valoración del producto</div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-lg-9">
+                    <form class="form-horizontal">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="col-lg-2  col-md-2 col-sm-7 col-xs-12 control-label text-center" for="textarea-wysihtml5">
+                                    <a href="#" class="btn btn-primary">Guardar</a>
+                                </label>
+                                <div class="col-lg-10 col-md-10 col-xs-12">
+                                    <textarea id="textarea-wysihtml5" class="form-control col-md-7" placeholder="Introduce un comentario..." rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label for="sel1">Selecciona valoración</label>
+                        <select class="form-control" id="sel1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <!-- RATINGS ROW -->
+
+        <div class="well">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="pull-left"><h3>Comentarios</h3></span>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span> Anonymous
+                    <span class="pull-right">10 days ago</span>
+                    <p>This product was great in terms of quality. I would definitely buy another!</p>
+                   
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span> Anonymous
+                    <span class="pull-right">12 days ago</span>
+                    <p>I've alredy ordered another one!</p>
+                    
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span> Anonymous
+                    <span class="pull-right">15 days ago</span>
+                    <p>I've seen some better than this, but not at this price. I definitely recommend this item.</p>
+                   
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RATINGS ROW END -->
+
+    </div>
+
+    <br>
+
+    <div class="container">
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p align="center">Copyright &copy; VirtualVinilo</p>
+                    <p align="center">Guillermo Urbano, Ilia Ramírez, Jorge Galindo, Daniel Camacho</p>
+                    <p align="center" class="text-danger"><a href="somos.html">Quienes Somos</a></p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+
+</body>
+
+</html>
